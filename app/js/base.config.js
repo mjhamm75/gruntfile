@@ -9,7 +9,7 @@ define(function() {
 
       disableHelpers: true,
 
-      // `true` it won't load locales and the i18n helper won't work
+      // // `true` it won't load locales and the i18n helper won't work
       disableI18n : true
     },
 
@@ -23,7 +23,7 @@ define(function() {
       'backbone': {
         deps: [
           'underscore',
-          'underscoreStrings',
+          // 'underscoreStrings',
           'jquery'
         ],
         exports: 'Backbone'
@@ -61,9 +61,9 @@ define(function() {
       // 'postmessage': {
       //   exports: "ZXD"
       // },
-      // 'hbs/json2' : {
-      //   exports: "JSON"
-      // },
+      json2 : {
+        exports: "JSON"
+      },
       // 'backboneCache': {
       //   deps: [
       //     'underscore',
@@ -129,13 +129,12 @@ define(function() {
       jqueryMockAjax: 'libs/jquery-mockjax/jquery.mockjax',
       underscore: 'libs/underscore/underscore',
       // underscoreStrings: 'foundation/js/libs/underscore.string-2.3.0',
-      backbone: 'libs/backbone',
+      backbone: 'libs/backbone/backbone',
       // bootstrap: 'foundation/js/libs/bootstrap-2.3.1',
       // acknowledge: 'foundation/js/libs/bootstrap-acknowledgeinput.min-0.4',
       // chosen: 'foundation/js/libs/chosen.jquery-0.9.13',
       // tickbox: 'foundation/js/libs/availity.tickbox',
       // radio: 'foundation/js/libs/availity.radio',
-      Handlebars : 'foundation/js/libs/handlebars',
       // moment: 'foundation/js/libs/moment-2.0.0.min',
       // daterangepicker: 'foundation/js/libs/daterangepicker-1.1',
       // postmessage: 'subscriptions/js/libs/postmessage',
@@ -156,11 +155,13 @@ define(function() {
 
       // environment: 'foundation/js/settings/',
 
-      text: 'libs/text',
-      hbs: 'libs/hbs',
-      // 'hbs/underscore' : 'foundation/js/libs/underscore-1.3.3',
-      // 'hbs/i18nprecompile' : 'foundation/js/libs/i18nprecompile',
-      // 'hbs/json2' : 'foundation/js/libs/json2',
+      // text: 'libs/text/text',
+      hbs: 'libs/hbs/hbs',
+      handlebars: 'libs/hbs/Handlebars',
+      i18nprecompile: 'libs/hbs/hbs/i18nprecompile',
+      json2 : 'libs/hbs/hbs/json2',
+
+      'app.templates': '../templates/'
     }
   });
 });

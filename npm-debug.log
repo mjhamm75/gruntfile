@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/mhamm/bin/node',
+1 verbose cli   '/Users/mhamm/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'underscore-strings',
+1 verbose cli   '-save-dev' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose node symlink /Users/mhamm/bin/node
+5 warn package.json scaffold@0.0.1 No repository field.
+6 warn package.json scaffold@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'underscore-strings', null ]
+9 verbose cache add name=undefined spec="underscore-strings" args=["underscore-strings",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'underscore-strings',
+10 verbose parsed url   path: 'underscore-strings',
+10 verbose parsed url   href: 'underscore-strings' }
+11 silly lockFile 54912f51-underscore-strings underscore-strings
+12 verbose lock underscore-strings /Users/mhamm/.npm/54912f51-underscore-strings.lock
+13 silly lockFile 54912f51-underscore-strings underscore-strings
+14 silly lockFile 54912f51-underscore-strings underscore-strings
+15 verbose addNamed [ 'underscore-strings', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 5891ec65-underscore-strings underscore-strings@
+18 verbose lock underscore-strings@ /Users/mhamm/.npm/5891ec65-underscore-strings.lock
+19 silly addNameRange { name: 'underscore-strings', range: '*', hasData: false }
+20 verbose url raw underscore-strings
+21 verbose url resolving [ 'https://registry.npmjs.org/', './underscore-strings' ]
+22 verbose url resolved https://registry.npmjs.org/underscore-strings
+23 info trying registry request attempt 1 at 23:40:20
+24 http GET https://registry.npmjs.org/underscore-strings
+25 http 404 https://registry.npmjs.org/underscore-strings
+26 silly registry.get cb [ 404,
+26 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+26 silly registry.get     date: 'Sun, 10 Nov 2013 04:40:20 GMT',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'content-length': '52',
+26 silly registry.get     'cache-control': 'must-revalidate' } ]
+27 silly lockFile 5891ec65-underscore-strings underscore-strings@
+28 silly lockFile 5891ec65-underscore-strings underscore-strings@
+29 error 404 'underscore-strings' is not in the npm registry.
+29 error 404 You should bug the author to publish it
+29 error 404
+29 error 404 Note that you can also install from a
+29 error 404 tarball, folder, or http url, or git url.
+30 error System Darwin 12.5.0
+31 error command "/Users/mhamm/bin/node" "/Users/mhamm/bin/npm" "install" "underscore-strings" "-save-dev"
+32 error cwd /Users/mhamm/Developer/gruntfile
+33 error node -v v0.10.21
+34 error npm -v 1.3.11
+35 error code E404
+36 verbose exit [ 1, true ]

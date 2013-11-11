@@ -15,6 +15,9 @@ module.exports = function(grunt) {
       less: ['app/styles/**/*.less'],
       tests: ['test/**/*.js']
     },
+    hbs: {
+      templateExtension : 'hbs'
+    },
     connect:{
       development: {
         port: 9000,

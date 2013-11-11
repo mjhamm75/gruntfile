@@ -1,9 +1,13 @@
 define(function(require) {
   'use strict';
 
+  var Router = require('router/app.router');
+  var Backbone = require('backbone');
+
   var App = function() {
     this.initialize = function() {
-      alert("Hello");
+      new Router();
+      Backbone.history.start();
     };
   };
 
