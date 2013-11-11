@@ -9,7 +9,6 @@
     "backbone": "~1.1.0",
     "text": "~2.0.10",
     "hbs": "~0.4.0",
-    "requirejs-hbs": "*",
     "bootstrap": "~3.0.2"
   }
 }

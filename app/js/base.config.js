@@ -14,12 +14,6 @@ define(function() {
     },
 
     shim: {
-      'underscore': {
-        exports: '_'
-      },
-      // 'underscoreStrings': {
-      //   exports: '_.str'
-      // },
       'backbone': {
         deps: [
           'underscore',
@@ -28,6 +22,22 @@ define(function() {
         ],
         exports: 'Backbone'
       },
+      bootstrap: {
+        deps: [ 'jquery' ]
+      },
+      'jqueryMockAjax': {
+        exports: '$.mockjax',
+        deps: ['jquery']
+      },
+      json2 : {
+        exports: "JSON"
+      },
+      'underscore': {
+        exports: '_'
+      }
+      // 'underscoreStrings': {
+      //   exports: '_.str'
+      // },
       // 'bootstrap': {
       //   deps: [
       //     'jquery'
@@ -61,9 +71,6 @@ define(function() {
       // 'postmessage': {
       //   exports: "ZXD"
       // },
-      json2 : {
-        exports: "JSON"
-      },
       // 'backboneCache': {
       //   deps: [
       //     'underscore',
@@ -83,10 +90,6 @@ define(function() {
       // 'radio': {
       //   exports: '$.fn.radio'
       // },
-      'jqueryMockAjax': {
-        exports: '$.mockjax',
-        deps: ['jquery']
-      }
       // 'jquery.ui.widget': {
       //   deps: [
       //     'jquery'
@@ -125,11 +128,19 @@ define(function() {
 
     paths: {
 
+      backbone: 'libs/backbone/backbone',
+      bootstrap: 'libs/bootstrap/dist/js/bootstrap',
       jquery: 'libs/jquery/jquery',
       jqueryMockAjax: 'libs/jquery-mockjax/jquery.mockjax',
       underscore: 'libs/underscore/underscore',
+
+      hbs: 'libs/hbs/hbs',
+      handlebars: 'libs/hbs/Handlebars',
+      i18nprecompile: 'libs/hbs/hbs/i18nprecompile',
+      json2 : 'libs/hbs/hbs/json2',
+
+      'app.templates': '../templates/'
       // underscoreStrings: 'foundation/js/libs/underscore.string-2.3.0',
-      backbone: 'libs/backbone/backbone',
       // bootstrap: 'foundation/js/libs/bootstrap-2.3.1',
       // acknowledge: 'foundation/js/libs/bootstrap-acknowledgeinput.min-0.4',
       // chosen: 'foundation/js/libs/chosen.jquery-0.9.13',
@@ -156,12 +167,6 @@ define(function() {
       // environment: 'foundation/js/settings/',
 
       // text: 'libs/text/text',
-      hbs: 'libs/hbs/hbs',
-      handlebars: 'libs/hbs/Handlebars',
-      i18nprecompile: 'libs/hbs/hbs/i18nprecompile',
-      json2 : 'libs/hbs/hbs/json2',
-
-      'app.templates': '../templates/'
     }
   });
 });
