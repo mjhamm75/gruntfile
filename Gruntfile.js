@@ -20,10 +20,11 @@ module.exports = function(grunt) {
     },
     connect:{
       development: {
-        port: 9000,
-        base: 'app',
-        keepalive: true,
-        livereload: true
+        options: {
+          port: 9000,
+          keepalive: true,
+          livereload: true
+        }
       }
     },
     watch: {
