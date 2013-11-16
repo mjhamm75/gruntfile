@@ -9,7 +9,7 @@ define(function(require) {
 
     initialize: function() {
       // debugger;
-      console.log("Views");
+      console.log("Test View");
     }
   });
   return TestView;
