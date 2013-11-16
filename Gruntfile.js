@@ -4,6 +4,8 @@
 
 module.exports = function(grunt) {
 
+  var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
@@ -22,8 +24,15 @@ module.exports = function(grunt) {
       development: {
         options: {
           port: 9000,
-          keepalive: true,
-          livereload: true
+          middleware: function(connect) {
+            return [proxySnippet];
+          }
+        },
+        proxies: {
+          context: '/users',
+          host: '99.44.242.76',
+          port: 3000,
+          https: false
         }
       }
     },
@@ -74,5 +83,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('server', ['less', 'connect', 'watch', 'open:dev']);
+  grunt.registerTask('server', ['less', 'configureProxies', 'connect', 'watch', 'open:dev']);
 };

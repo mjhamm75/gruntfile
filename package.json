@@ -21,7 +21,8 @@
     "grunt-contrib-watch": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-open": "latest",
-    "grunt-contrib-less": "~0.8.1"
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-connect-proxy": "~0.1.6"
   },
   "scripts": {
     "test": "grunt test --verbose"
