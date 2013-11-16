@@ -11,6 +11,6 @@ Proxies
     <li>**server** - port **9000**</li>
   </ol>
   
-<p>The <bold>server</bold> server has all of the proxies attached to it.  All requests hit the <bold>server</bold> server and are immediately proxied.
-    If no route is found for the request in the predefined proxies, then the request is sent to the <bold>staticserver</bold>.  This will then route
+<p>The **server** server has all of the proxies attached to it.  All requests hit the **server** server and are immediately proxied.
+    If no route is found for the request in the predefined proxies, then the request is sent to the **staticserver**.  This will then route
     the request as would normally be expected.</p>
