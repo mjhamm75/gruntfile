@@ -10,8 +10,7 @@ Proxies
     <li>**staticserver** - port **8001**</li>
     <li>**server** - port **9000**</li>
   </ol>
-
-
+  </br>
   The **server** server has all of the proxies attached to it.  All request hit the **server** server and are immediately proxied.
     If no route is found for the request in the predefined proxies, then the request is sent to the **staticserver**.  This will then route
     the request would normally be expected.</p>
