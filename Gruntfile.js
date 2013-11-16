@@ -20,20 +20,36 @@ module.exports = function(grunt) {
     hbs: {
       templateExtension : 'hbs'
     },
-    connect:{
-      development: {
+    connect: {
+      staticserver: {
         options: {
-          port: 9000,
-          middleware: function(connect) {
+          hostname: 'localhost',
+          port: 8001
+        }
+      },
+      server: {
+        options: {
+          hostname: '*',
+          port: '9000',
+          middleware: function() {
             return [proxySnippet];
           }
         },
-        proxies: {
-          context: '/users',
-          host: '99.44.242.76',
-          port: 3000,
-          https: false
-        }
+        proxies: [
+          {
+            context: '/users',
+            host: '99.44.242.76',
+            port: 3000,
+            rewrite: {
+              '/users': '/users.json'
+            }
+          },
+          {
+            context: '/',
+            host: 'localhost',
+            port: 8001
+          }
+        ]
       }
     },
     watch: {
@@ -71,7 +87,7 @@ module.exports = function(grunt) {
     },
     open: {
       dev : {
-        url: 'http://localhost:8000/app'
+        url: 'http://localhost:9000/app'
       },
     },
     less: {
@@ -83,5 +99,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('server', ['less', 'configureProxies', 'connect', 'watch', 'open:dev']);
+  grunt.registerTask('server', ['less', 'configureProxies:server', 'connect:staticserver', 'connect:server', 'watch', 'open:dev']);
 };
