@@ -99,5 +99,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('server', ['less', 'configureProxies:server', 'connect:staticserver', 'connect:server', 'watch', 'open:dev']);
+  grunt.registerTask('server', ['less', 'configureProxies:server', 'connect:staticserver', 'connect:server', 'open:dev', 'watch']);
 };
