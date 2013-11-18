@@ -15,7 +15,8 @@ module.exports = function(grunt) {
       html: ['app/index.html'],
       css: ['app/styles/**/*.css'],
       less: ['app/styles/**/*.less'],
-      tests: ['test/**/*.js']
+      tests: ['test/**/*.js'],
+      dist: 'dist'
     },
     hbs: {
       templateExtension : 'hbs'
@@ -96,8 +97,21 @@ module.exports = function(grunt) {
           'app/styles/app.css': 'app/styles/app.less'
         }
       }
+    },
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= dirs.dist %>/*',
+            '!<%= dirs.dist %>/.git*'
+          ]
+        }]
+      }
     }
   });
 
   grunt.registerTask('server', ['less', 'configureProxies:server', 'connect:staticserver', 'connect:server', 'open:dev', 'watch']);
+  grunt.registerTask('build', ['clean']);
 };
