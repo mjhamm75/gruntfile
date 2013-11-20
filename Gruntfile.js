@@ -109,9 +109,19 @@ module.exports = function(grunt) {
           ]
         }]
       }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: 'app/js',
+          name: 'main',
+          out: 'compiled/main.js',
+          removeCombined: false
+        }
+      }
     }
   });
 
   grunt.registerTask('server', ['less', 'configureProxies:server', 'connect:staticserver', 'connect:server', 'open:dev', 'watch']);
-  grunt.registerTask('build', ['clean']);
+  grunt.registerTask('build', ['clean:dist']);
 };
