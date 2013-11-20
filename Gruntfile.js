@@ -18,8 +18,17 @@ module.exports = function(grunt) {
       tests: ['test/**/*.js'],
       dist: 'dist'
     },
-    hbs: {
-      templateExtension : 'hbs'
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= dirs.dist %>/*',
+            '!<%= dirs.dist %>/.git*'
+          ]
+        }]
+      }
     },
     connect: {
       staticserver: {
@@ -53,6 +62,38 @@ module.exports = function(grunt) {
         ]
       }
     },
+    hbs: {
+      templateExtension : 'hbs'
+    },
+    jshint: {
+      gruntfile: 'Gruntfile.js',
+      sources: '<%= dirs.jshint %>',
+      options: {
+        jshintrc: '.jshintrc'
+      }
+    },
+    less: {
+      development: {
+        files: {
+          'app/styles/app.css': 'app/styles/app.less'
+        }
+      }
+    },
+    open: {
+      dev : {
+        url: 'http://localhost:9000/app'
+      },
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: 'app/js',
+          name: 'main',
+          out: 'compiled/main.js',
+          removeCombined: false
+        }
+      }
+    },
     watch: {
       options: {
         livereload: true
@@ -77,47 +118,6 @@ module.exports = function(grunt) {
       },
       karma: {
         files: ['<%= dirs.js %>', '<%= dirs.tests %>'],
-      }
-    },
-    jshint: {
-      gruntfile: 'Gruntfile.js',
-      sources: '<%= dirs.jshint %>',
-      options: {
-        jshintrc: '.jshintrc'
-      }
-    },
-    open: {
-      dev : {
-        url: 'http://localhost:9000/app'
-      },
-    },
-    less: {
-      development: {
-        files: {
-          'app/styles/app.css': 'app/styles/app.less'
-        }
-      }
-    },
-    clean: {
-      dist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= dirs.dist %>/*',
-            '!<%= dirs.dist %>/.git*'
-          ]
-        }]
-      }
-    },
-    requirejs: {
-      compile: {
-        options: {
-          baseUrl: 'app/js',
-          name: 'main',
-          out: 'compiled/main.js',
-          removeCombined: false
-        }
       }
     }
   });
