@@ -122,6 +122,15 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('server', ['less', 'configureProxies:server', 'connect:staticserver', 'connect:server', 'open:dev', 'watch']);
-  grunt.registerTask('build', ['clean:dist']);
+  grunt.registerTask('server', [
+      'less',
+      'configureProxies:server',
+      'connect:staticserver',
+      'connect:server',
+      'open:dev',
+      'watch'
+    ]);
+  grunt.registerTask('build', [
+      'clean:dist'
+    ]);
 };
